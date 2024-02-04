@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "flipclock": "^0.10.8",
     "font-awesome": "^4.7.0",
     "gulp-download": "^0.0.1",
     "waypoints": "^4.0.1"

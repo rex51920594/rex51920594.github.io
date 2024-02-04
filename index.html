@@ -24,6 +24,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
+
     <script>
         // load css files from CDN if local node_modules fail
         function loadCssFromCDN(css) {
@@ -51,6 +52,7 @@
     </script>
 
     <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/responsive-clock.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/flexslider.css">
@@ -59,6 +61,7 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css'>
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -115,10 +118,21 @@
                 <h3>We are getting hitched</h3>
                 <p>The dates are 19<sup>th</sup> & 19<sup>th</sup> of OCT. '24 and we would like you to be a part of
                     it.</p>
+
                 <!-- <div class="share-bar"></div> -->
             </div>
         </div>
     </div>
+</section>
+<section id="date">
+    <div class="container">
+        <div class="row wp7">
+            <div class="flipTimebox">
+                <div style="display: flex; justify-content: center; align-items: center;"  class="clock clock-fix"></div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <section id="intro">
@@ -218,7 +232,7 @@
 
 </section>
 
-<section id="instagram" class="section-padding">
+<!-- <section id="instagram" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -234,7 +248,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section id="eng-pics" class="section-padding">
     <div class="container-fluid">
@@ -457,13 +471,21 @@
         </div>
     </div>
 </footer>
+
+	<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
 <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src='https://momentjs.com/downloads/moment.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js'></script>
+<script src="js/clock.js"></script>
 <script src="js/scripts.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNvW7BN3EIUuCqo1VZQsedLcGEORhvmKQ&callback=initMap"></script>
