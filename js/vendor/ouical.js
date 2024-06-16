@@ -91,6 +91,14 @@
 
         outlook: function(event) {
             return this.ics(event, 'icon-outlook', 'Outlook');
+        },
+
+        ios: function(event) {
+            return this.ics(event, 'icon-ios', 'iOS');
+        },
+    
+        android: function(event) {
+            return this.ics(event, 'icon-android', 'Android');
         }
     };
 
@@ -98,8 +106,8 @@
         return {
             google: calendarGenerators.google(event),
             yahoo: calendarGenerators.yahoo(event),
-            ical: calendarGenerators.ical(event),
-            outlook: calendarGenerators.outlook(event)
+            ios: calendarGenerators.ios(event),
+            android: calendarGenerators.android(event),
         };
     };
 
