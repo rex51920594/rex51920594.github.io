@@ -85,21 +85,43 @@
                 href + '">' + calendarName + ' Calendar</a>';
         },
 
-        ical: function(event) {
-            return this.ics(event, 'icon-ical', 'iCal');
-        },
-
-        outlook: function(event) {
-            return this.ics(event, 'icon-outlook', 'Outlook');
-        },
-
         ios: function(event) {
-            return this.ics(event, 'icon-ios', 'iOS');
-        },
+            var startTime = formatTime(event.start);
+            var endTime = calculateEndTime(event);
     
-        android: function(event) {
-            return this.ics(event, 'icon-android', 'Android');
+            var icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'BEGIN:VEVENT',
+                'URL:' + document.URL,
+                'DTSTART:' + (startTime || ''),
+                'DTEND:' + (endTime || ''),
+                'SUMMARY:' + (event.title || ''),
+                'DESCRIPTION:' + (event.description || ''),
+                'LOCATION:' + (event.address || ''),
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\n');
+    
+            var icsBlob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            var icsUrl = URL.createObjectURL(icsBlob);
+    
+            // Create a link element
+            var link = document.createElement('a');
+            link.href = icsUrl;
+            link.download = 'event.ics';
+            link.textContent = 'iOS Calendar';
+    
+            // Append link to body
+            document.body.appendChild(link);
+    
+            // Click the link to trigger download
+            link.click();
+    
+            // Remove the link after download
+            document.body.removeChild(link);
         }
+
     };
 
     var generateCalendars = function(event) {

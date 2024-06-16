@@ -17,7 +17,6 @@ $(document).ready(function() {
         countdown: true,
         autostart: false
       });
-      console.log("Date has already passed!")
       
     } else {
       // Run countdown timer
@@ -26,7 +25,6 @@ $(document).ready(function() {
         countdown: true,
         callbacks: {
           stop: function() {
-            console.log("Timer has ended!")
           }
         }
       });
