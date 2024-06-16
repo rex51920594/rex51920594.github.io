@@ -61,75 +61,13 @@
 
             return '<a class="icon-yahoo" target="_blank" href="' +
                 href + '">Yahoo! Calendar</a>';
-        },
-
-        ics: function(event, eClass, calendarName) {
-            var startTime = formatTime(event.start);
-            var endTime = calculateEndTime(event);
-
-            var href = encodeURI(
-                'data:text/calendar;charset=utf8,' + [
-                    'BEGIN:VCALENDAR',
-                    'VERSION:2.0',
-                    'BEGIN:VEVENT',
-                    'URL:' + document.URL,
-                    'DTSTART:' + (startTime || ''),
-                    'DTEND:' + (endTime || ''),
-                    'SUMMARY:' + (event.title || ''),
-                    'DESCRIPTION:' + (event.description || ''),
-                    'LOCATION:' + (event.address || ''),
-                    'END:VEVENT',
-                    'END:VCALENDAR'].join('\n'));
-
-            return '<a class="' + eClass + '" target="_blank" href="' +
-                href + '">' + calendarName + ' Calendar</a>';
-        },
-
-        ios: function(event) {
-            var startTime = formatTime(event.start);
-            var endTime = calculateEndTime(event);
-    
-            var icsContent = [
-                'BEGIN:VCALENDAR',
-                'VERSION:2.0',
-                'BEGIN:VEVENT',
-                'URL:' + document.URL,
-                'DTSTART:' + (startTime || ''),
-                'DTEND:' + (endTime || ''),
-                'SUMMARY:' + (event.title || ''),
-                'DESCRIPTION:' + (event.description || ''),
-                'LOCATION:' + (event.address || ''),
-                'END:VEVENT',
-                'END:VCALENDAR'
-            ].join('\n');
-    
-            var icsBlob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            var icsUrl = URL.createObjectURL(icsBlob);
-    
-            // Create a link element
-            var link = document.createElement('a');
-            link.href = icsUrl;
-            link.download = 'event.ics';
-            link.textContent = 'iOS Calendar';
-    
-            // Append link to body
-            document.body.appendChild(link);
-    
-            // Click the link to trigger download
-            link.click();
-    
-            // Remove the link after download
-            document.body.removeChild(link);
         }
-
     };
 
     var generateCalendars = function(event) {
         return {
             google: calendarGenerators.google(event),
-            yahoo: calendarGenerators.yahoo(event),
-            ios: calendarGenerators.ios(event),
-            android: calendarGenerators.android(event),
+            yahoo: calendarGenerators.yahoo(event)
         };
     };
 
