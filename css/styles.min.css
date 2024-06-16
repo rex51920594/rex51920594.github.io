@@ -129,7 +129,7 @@ section.blog {
 }
 
 a {
-    color: #e8ca6f;
+    /* color: #e8ca6f; */
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
     -webkit-transition-duration: 200ms;
