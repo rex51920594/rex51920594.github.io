@@ -929,7 +929,9 @@ header .member-actions {
 }
 
 #video-bg {
-    height: 600px
+    height: 600px;
+    position: relative;
+    overflow: hidden;
 }
 
 #video-content {
