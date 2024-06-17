@@ -726,7 +726,9 @@ Engagement Pics
 Embed video
 ========================================================================== */
 #video-bg {
-  height: 500px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
 }
 #video-content {
   width: 100%;
