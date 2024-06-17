@@ -348,7 +348,31 @@
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
 </script>
+<!-- Include YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    function onYouTubeIframeAPIReady() {
+        var player;
+        player = new YT.Player('bgndVideo', {
+            videoId: '99NsiwPQyy8',
+            playerVars: {
+                'autoplay': 1,
+                'mute': 1,
+                'controls': 1,
+                'start': 80,
+                'end': 259,
+                'loop': 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
 
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+</script>
 <script>
     var queryString = window.location.search;
     var searchParams = new URLSearchParams(queryString);
