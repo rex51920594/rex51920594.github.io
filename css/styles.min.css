@@ -934,6 +934,12 @@ header .member-actions {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    #video-bg {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
 #video-content {
     width: 100%;
     height: 100%;
