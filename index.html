@@ -359,10 +359,12 @@
             playerVars: {
                 'autoplay': 1,
                 'mute': 1,
-                'controls': 1,
+                'controls': 0,
                 'start': 80,
                 'end': 259,
-                'loop': 1,
+                'loop': 3,
+                'opacity':1,
+                'origin': window.location.origin,
                 'playsinline': 1 // Ensures the video plays inline on mobile devices
             },
             events: {
@@ -381,6 +383,23 @@
             }
         }
     }
+
+        // Function to ensure containment within the specified element
+        function setContainment() {
+        var bgndVideoElement = document.getElementById('bgndVideo');
+        var containmentElement = document.querySelector('#video-bg');
+        
+        // Ensure the player fits within the containment element
+        containmentElement.style.position = 'relative';
+        bgndVideoElement.style.position = 'absolute';
+        bgndVideoElement.style.top = '0';
+        bgndVideoElement.style.left = '0';
+        bgndVideoElement.style.width = '100%';
+        bgndVideoElement.style.height = '100%';
+    }
+
+    // Call setContainment function to adjust styles
+    setContainment();
 </script>
 
 <script>
