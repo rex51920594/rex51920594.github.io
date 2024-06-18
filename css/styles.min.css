@@ -419,7 +419,7 @@ section .header {
 @media screen and (max-width: 568px) {
     .hero {
         min-height: 750px;
-        background: url("../img/eng_pics/ZACK\ 702\ \(1\).jpg")  center center;
+        background: url("../img/eng_pics/ZACK\ 702.jpg")  center center;
         -webkit-background-size: contain;
         -moz-background-size: contain;
         -o-background-size: contain;
@@ -432,7 +432,7 @@ section .header {
   @media screen and (max-width: 480) {
     .hero {
         min-height: 750px;
-        background: url("../img/eng_pics/ZACK\ 702\ \(1\).jpg") center center;
+        background: url("../img/eng_pics/ZACK\ 702.jpg") center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
